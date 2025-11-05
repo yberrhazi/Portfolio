@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yassine Berrhazi – Portfolio</title>
+  <meta name="description" content="CV & portfolio de Yassine Berrhazi – Ingénierie Électronique, IA & Finance Quantitative" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0d12;--card:#111522;--muted:#9aa4b2;--text:#e6e9ef;--accent:#6ee7b7;--accent-2:#7aa2f7;--ring:rgba(110,231,183,.35);
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    :root.light{ --bg:#f7f8fb; --card:#ffffff; --muted:#5b6472; --text:#0f172a; --accent:#0ea5e9; --accent-2:#7c3aed; --ring:rgba(14,165,233,.25); --shadow:0 10px 30px rgba(2,6,23,.08); }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,rgba(124,58,237,.15),transparent),radial-gradient(900px 400px at -10% -20%,rgba(14,165,233,.15),transparent),var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    /* Layout */
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+    header.nav{position:sticky;top:0;backdrop-filter:saturate(160%) blur(14px);background:linear-gradient( to bottom, rgba(11,13,18,.75), rgba(11,13,18,.35));border-bottom:1px solid rgba(255,255,255,.06);z-index:10}
+    :root.light header.nav{background:linear-gradient(to bottom, rgba(247,248,251,.85), rgba(247,248,251,.55));border-color:rgba(15,23,42,.06)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .brand{font-weight:800;letter-spacing:.3px}
+    .nav-links{display:flex;flex-wrap:wrap;gap:14px}
+    .nav-links a{padding:8px 12px;border-radius:10px;color:var(--muted)}
+    .nav-links a:hover{color:var(--text);background:rgba(255,255,255,.04)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:52px 0}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}}
+    .title{font-size:clamp(28px,4vw,42px);line-height:1.15;margin:0 0 8px;font-weight:800}
+    .subtitle{font-size:clamp(16px,2vw,18px);color:var(--muted);margin:0 0 18px}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 24px}
+    .tag{background:linear-gradient( to right, rgba(126,58,237,.18), rgba(14,165,233,.18));border:1px solid rgba(255,255,255,.08);padding:6px 10px;border-radius:999px;font-size:13px;color:#dbeafe}
+    :root.light .tag{color:#1f2937;border-color:rgba(2,6,23,.06)}
+    .cta{display:flex;flex-wrap:wrap;gap:10px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:linear-gradient( to bottom right, rgba(110,231,183,.15), rgba(124,58,237,.15));box-shadow:var(--shadow)}
+    .btn:hover{transform:translateY(-1px);transition:transform .15s ease}
+    .btn.secondary{background:var(--card)}
+
+    .card{background:linear-gradient( to bottom, rgba(255,255,255,.02), rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.06);border-radius:18px;box-shadow:var(--shadow)}
+    :root.light .card{border-color:rgba(15,23,42,.06)}
+    .section{margin:26px 0 40px;padding:22px}
+    .section h2{margin:0 0 14px;font-size:22px}
+
+    /* Grid Cards */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    @media (max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:640px){.grid{grid-template-columns:1fr}}
+
+    .project{padding:16px}
+    .project h3{margin:8px 0 6px;font-size:18px}
+    .project p{margin:0;color:var(--muted)}
+    .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .chip{padding:4px 8px;border-radius:999px;background:rgba(255,255,255,.06);font-size:12px;color:var(--muted)}
+
+    /* Timeline */
+    .timeline{position:relative;margin-left:8px}
+    .timeline:before{content:"";position:absolute;left:10px;top:0;bottom:0;width:2px;background:linear-gradient(var(--accent),var(--accent-2))}
+    .tl{position:relative;padding-left:28px;margin:18px 0}
+    .tl:before{content:"";position:absolute;left:2px;top:6px;width:16px;height:16px;border-radius:999px;background:var(--card);border:2px solid var(--accent)}
+    .tl h3{margin:0 0 2px;font-size:16px}
+    .tl small{color:var(--muted)}
+    .tl ul{margin:8px 0 0 18px;padding:0;color:var(--muted)}
+
+    /* Skills */
+    .skill-list{display:flex;flex-wrap:wrap;gap:10px}
+    .skill{padding:8px 12px;border-radius:10px;background:var(--card);border:1px solid rgba(255,255,255,.06);font-size:14px}
+
+    /* Footer */
+    footer{padding:40px 0;color:var(--muted)}
+
+    /* Utilities */
+    .row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    @media (max-width:800px){.split{grid-template-columns:1fr}}
+    .lead{font-size:15.8px;color:var(--muted)}
+    .kbd{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:2px 6px;border-radius:6px;font-size:12px}
+
+    /* Print (for PDF export) */
+    @media print{ header.nav,.cta,.theme{display:none!important} body{background:white} :root{--text:#000;--muted:#333} .card{box-shadow:none;border-color:#ddd} }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">Yassine Berrhazi</div>
+      <nav class="nav-links">
+        <a href="#about">À propos</a>
+        <a href="#skills">Compétences</a>
+        <a href="#projects">Projets</a>
+        <a href="#experience">Expérience</a>
+        <a href="#education">Formation</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="theme btn secondary" id="themeBtn" aria-label="Basculer le thème">🌗</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero" id="about">
+      <div>
+        <img src="images/photo.jpg" alt="Photo de Yassine Berrhazi"
+     style="width:180px;height:180px;object-fit:cover;border-radius:50%;
+     border:3px solid rgba(255,255,255,.15);margin-bottom:18px;
+     box-shadow:0 6px 18px rgba(0,0,0,0.25);">
+
+        <h1 class="title">Élève ingénieur en électronique (ENSEIRB‑MATMECA) & Licence de Mathématiques</h1>
+        <p class="subtitle">Bordeaux, France · À la recherche d’un stage 4 mois (mai–sept. 2026) en intelligence artificielle / traitement de signal et de l'image</p>
+        <p class="lead">Je conçois, code et analyse à l'interface <strong>électronique / traitement du signal & image</strong> et <strong>data/finance</strong>. Intéressé par le <em>trading quantitatif</em> et les architectures <em>FPGA‑HFT</em>.</p>
+        <div class="tags">
+          <span class="tag">C / Python / MATLAB</span>
+          <span class="tag">VHDL · FPGA (Vivado)</span>
+          <span class="tag">Automatisme · Grafcet · Ladder</span>
+          <span class="tag">LabVIEW · CompactRIO</span>
+          <span class="tag">SPICE · Cadence Virtuoso</span>
+          <span class="tag">Signal & Image (OpenCV)</span>
+        </div>
+        <div class="cta">
+          <a class="btn" href="#contact">Me contacter</a>
+          <a class="btn secondary" href="CV_Yassine_Berrhazi.pdf" download>Télécharger mon CV</a>
+        </div>
+      </div>
+      <div>
+        <div class="card section" style="text-align:center">
+          <h2>Disponibilité</h2>
+          <p class="lead">Stage <strong>mai–septembre 2026</strong> (4 mois) en <strong>intelligence artificielle / traitement de signal et de l'image</p>
+          <div class="row" style="justify-content:center;margin-top:10px">
+            <span class="chip">Bordeaux / France / Europe</span>
+            <span class="chip">C · Python · VHDL</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="card section" id="skills">
+      <h2>Compétences</h2>
+      <div class="split">
+        <div>
+          <h3>Techniques</h3>
+          <div class="skill-list">
+            <span class="skill">C</span><span class="skill">Python</span><span class="skill">MATLAB</span>
+            <span class="skill">VHDL</span><span class="skill">FPGA (Vivado)</span>
+            <span class="skill">LabVIEW</span><span class="skill">CompactRIO</span>
+            <span class="skill">Grafcet</span><span class="skill">Ladder</span>
+            <span class="skill">SPICE</span><span class="skill">Cadence Virtuoso</span>
+            <span class="skill">Routage PCB (Proteus)</span>
+            <span class="skill">Git · Linux</span>
+          </div>
+        </div>
+        <div>
+          <h3>Domaines</h3>
+          <div class="skill-list">
+            <span class="skill">Systèmes embarqués</span><span class="skill">Automatisme & PID</span>
+            <span class="skill">Traitement du signal</span><span class="skill">Traitement d'image (OpenCV)</span>
+            <span class="skill">Électronique de puissance (PWM)</span>
+            <span class="skill">ADC/numérique</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="card section" id="projects">
+      <h2>Projets</h2>
+
+      <!-- Dossier: Automatique -->
+      <h3 style="margin-top:10px">📁 Automatique</h3>
+      <div class="grid">
+        <article class="project card"><div class="project">
+          <h3>Commande d’ascenseur — Automgen TSX47</h3>
+          <p>Programmation <strong>Grafcet/Ladder</strong> d’un ascenseur 5 étages (priorités appels, verrouillage portes, arrêts d’urgence).</p>
+          <div class="meta"><span class="chip">Automgen</span><span class="chip">Grafcet</span><span class="chip">Ladder</span></div>
+        </div></article>
+        <article class="project card"><div class="project">
+          <h3>Asservissement PID — CompactRIO & LabVIEW</h3>
+          <p>Modélisation d’un moteur DC, identification puis <strong>PID temps réel</strong> (consigne vitesse) avec supervision LabVIEW.</p>
+          <div class="meta"><span class="chip">LabVIEW</span><span class="chip">CompactRIO</span><span class="chip">Contrôle</span></div>
+        </div></article>
+        
+      </div>
+
+      <!-- Dossier: Électronique analogique -->
+      <h3 style="margin-top:22px">📁 Électronique analogique</h3>
+      <div class="grid">
+        <article class="project card"><div class="project">
+          <h3>Ventilateur PWM — Électronique de puissance & PCB</h3>
+          <p>Commande 0–100 % par MLI (0–4 V → duty), dimensionnement MOSFET/filtrage RC et <strong>PCB double face</strong> (Proteus).</p>
+          <div class="meta"><span class="chip">PWM</span><span class="chip">MOSFET</span><span class="chip">PCB</span></div>
+        </div></article>
+        <article class="project card"><div class="project">
+          <h3>ADC Flash 4 bits — Cadence Virtuoso</h3>
+          <p>Conception hiérarchisée avec échantillonneur, miroir de courant, comparateurs, logique de codage; simulation <strong>SPICE</strong>.</p>
+          <div class="meta"><span class="chip">Virtuoso</span><span class="chip">SPICE</span><span class="chip">AMS 0.35 µm</span></div>
+        </div></article>
+      </div>
+
+      <!-- Dossier: Numérique -->
+      <h3 style="margin-top:22px">📁 Numérique (FPGA, VHDL)</h3>
+      <div class="grid">
+        <article class="project card"><div class="project">
+          <h3>Générateur de nombres aléatoires — VHDL (LFSR)</h3>
+          <p>LFSR paramétrable (largeur 8/16 bits) avec polynôme de rétroaction maximal, <strong>seed</strong> et <strong>enable</strong>, drapeaux <em>valid</em>/<em>ready</em>, et <strong>testbench</strong> (période 2^n−1, distribution). Intégrable comme IP pour tirages pseudo‑aléatoires.</p>
+          <div class="meta"><span class="chip">VHDL</span><span class="chip">FPGA</span><span class="chip">LFSR</span><span class="chip">Testbench</span></div>
+        </div></article>
+        <article class="project card"><div class="project">
+          <h3>Jeu du Blackjack sur FPGA</h3>
+          <p>Implémentation du jeu Blackjack sur carte FPGA, avec affichage VGA, gestion de l'horloge, machines à états finis, module RAM et module UART.</p>
+          <div class="meta"><span class="chip">VHDL</span><span class="chip">FPGA</span><span class="chip">VGA</span><span class="chip">FSM</span></div>
+        </div></article>
+      </div>
+
+
+
+
+        <!-- Dossier: Traitement du signal et de l'image -->
+              <h3 style="margin-top:22px">📁 Traitement du signal et de l'image</h3>
+              <div class="grid">
+                <article class="project card"><div class="project">
+                  <h3>Projet de compression HUFFMAN (langage C)</h3>
+                  <p>Travaux pratiques et projet autour du traitement d'images, notamment la détection de contours, le codage binaire, la compression sous format Huffman, génération d'images Mandelbrot </p>
+                  <div class="meta"><span class="chip">Langage C</span><span class="chip">Gestion de mémoire</span><span class="chip">Codage binaire</span><span class="chip">Algorithmique</span></div>
+                </div></article>
+                <article class="project card"><div class="project">
+                  <h3>Traitement de signal (Matlab)</h3>
+                  <p>Filtres RIF/RII, analyse spectrale, transformées de fourier, filtrage et traitement de signaux sonores, analyse de spectogrammes</p>
+                  <div class="meta"><span class="chip">VHDL</span><span class="chip">FPGA</span><span class="chip">VGA</span><span class="chip">FSM</span></div>
+                </div></article>
+              </div>
+      
+    <!-- EXPERIENCE -->
+    <section class="card section" id="experience">
+      <h2>Expérience</h2>
+      <div class="timeline">
+        <div class="tl">
+          <h3>Stagiaire Robotique — ENSEIRB‑MATMECA</h3>
+          <small>Juin 2025 · Bordeaux</small>
+          <ul>
+            <li>Développement Python pour la commande de cobots (UR5, xArm6) et communication capteurs–actionneurs.</li>
+          </ul>
+        </div>
+        <div class="tl">
+          <h3>Professeur particulier (Maths/Physique)</h3>
+          <small>2024 — Aujourd’hui</small>
+          <ul>
+            <li>Accompagnement individuel et vulgarisation scientifique.</li>
+          </ul>
+        </div>
+        <div class="tl">
+          <h3>Engagements associatifs</h3>
+          <small>2025 —</small>
+          <ul>
+            <li>Responsable communication — NLOG’EIRB (programmation compétitive).</li>
+            <li>Co‑responsable logistique — Forum INGÉNIB (80+ entreprises, 1500 étudiants).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="card section" id="education">
+      <h2>Formation</h2>
+      <div class="split">
+        <div>
+          <h3>Université d’Angers</h3>
+          <p class="lead">Licence 3 Mathématiques (2025–2026, à distance). Modules : Probabilités, Analyse complexe, Équations différentielles, Topologie, Calcul différentiel.</p>
+        </div>
+        <div>
+          <h3>ENSEIRB‑MATMECA (Bordeaux INP)</h3>
+          <p class="lead">Diplôme d’ingénieur — spécialité <strong>Électronique</strong> (2024–2027). Systèmes embarqués, automatisme, VHDL, C, Python, traitement du signal, conception analogique/numérique.</p>
+        </div>
+        <div>
+          <h3>CPGE PCSI‑PSI</h3>
+          <p class="lead">2022–2024 — Classé 11ᵉ/961 au concours CCINP. Rigueur scientifique et esprit analytique.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="card section" id="contact">
+      <h2>Contact</h2>
+      <p class="lead">Ouvert aux opportunités en <strong>IA / Data / Finance</strong></p>
+      <div class="row">
+        <a class="btn" href="mailto:berrhaziyassine@gmail.com">✉️ Email</a>
+        <a class="btn secondary" href="https://www.linkedin.com/in/yassine-berrhazi-5a52241b5/" target="_blank" rel="noreferrer">in LinkedIn</a>
+        <a class="btn secondary" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </section>
+
+    <footer class="container" style="text-align:center">
+      <p>© <span id="year"></span> Yassine Berrhazi · </p>
+    </footer>
+  </main>
+
+  <script>
+    // Theme (dark/light) with localStorage and quick keyboard shortcut (G)
+    const root=document.documentElement;
+    const btn=document.getElementById('themeBtn');
+    function setTheme(mode){ if(mode==='light'){root.classList.add('light');} else {root.classList.remove('light');} localStorage.setItem('theme',mode);} 
+    const saved=localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');
+    setTheme(saved);
+    btn.addEventListener('click',()=> setTheme(root.classList.contains('light') ? 'dark':'light'));
+    addEventListener('keydown',e=>{ if(e.key.toLowerCase()==='g') btn.click(); });
+
+    // Copy link to clipboard
+    document.getElementById('copyLink').addEventListener('click',async e=>{
+      e.preventDefault();
+      try{ await navigator.clipboard.writeText(location.href); e.target.textContent='✅ Lien copié'; setTimeout(()=>e.target.textContent='🔗 Copier le lien',1800);}catch(err){ alert('Copie impossible'); }
+    });
+
+    // Year
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
