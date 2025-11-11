@@ -111,9 +111,9 @@
      border:3px solid rgba(255,255,255,.15);margin-bottom:18px;
      box-shadow:0 6px 18px rgba(0,0,0,0.25);">
 
-        <h1 class="title">Engineering Student in Electronics (ENSEIRB‑MATMECA) & Mathematics Degree</h1>
+        <h1 class="title">Engineering Student in Electronics (ENSEIRB-MATMECA) & Mathematics Degree</h1>
         <p class="subtitle">Bordeaux, France · Seeking a 4-month internship (May–Sept. 2026) in artificial intelligence / signal and image processing</p>
-        <p class="lead">I design, code and analyze at the intersection of <strong>electronics / signal & image processing</strong> and <strong>data/finance</strong>. Interested in <em>data science</em> and <em>quantitative trading</em> </p>
+        <p class="lead">I design, code and analyze at the intersection of <strong>electronics / signal & image processing</strong> and <strong>data/finance</strong>. Interested in <em>data science</em> and <em>quantitative trading</em></p>
         <div class="tags">
           <span class="tag">C / Python / MATLAB</span>
           <span class="tag">VHDL · FPGA (Vivado)</span>
@@ -130,7 +130,7 @@
       <div>
         <div class="card section" style="text-align:center">
           <h2>Availability</h2>
-          <p class="lead"><strong>May–September 2026</strong> internship (4 months) in <strong>artificial intelligence / signal and image processing</p>
+          <p class="lead"><strong>May–September 2026</strong> internship (4 months) in <strong>artificial intelligence / signal and image processing</strong></p>
           <div class="row" style="justify-content:center;margin-top:10px">
             <span class="chip">Bordeaux / France / Europe</span>
             <span class="chip">C · Python · VHDL</span>
@@ -170,23 +170,24 @@
     <!-- PROJECTS -->
     <section class="card section" id="projects">
       <h2>Projects</h2>
+
       <!-- Folder: Finance & Quant -->
-<h3 style="margin-top:22px">📁 Finance & Quant</h3>
-<div class="grid">
-  <article class="project card"><div class="project">
-    <h3>Monte Carlo π Estimation</h3>
-    <p>Random sampling in the unit square to estimate π and visualize convergence (Law of Large Numbers).</p>
-    <div class="meta">
-      <span class="chip">Python</span>
-      <span class="chip">Jupyter</span>
-      <span class="chip">Monte Carlo</span>
-    </div>
-    <p style="margin-top:10px">
-      <a class="btn" href="https://github.com/yberrhazi/Finance-projects/tree/main/MonteCarlo_PI" target="_blank" rel="noreferrer">View Project</a>
-      <a class="btn secondary" href="https://github.com/yberrhazi/Finance-projects/blob/main/MonteCarlo_PI/montecarlo.ipynb" target="_blank" rel="noreferrer">Notebook</a>
-    </p>
-  </div></article>
-</div>
+      <h3 style="margin-top:22px">📁 Finance & Quant</h3>
+      <div class="grid">
+        <article class="project card"><div class="project">
+          <h3>Monte Carlo π Estimation</h3>
+          <p>Random sampling in the unit square to estimate π and visualize convergence (Law of Large Numbers).</p>
+          <div class="meta">
+            <span class="chip">Python</span>
+            <span class="chip">Jupyter</span>
+            <span class="chip">Monte Carlo</span>
+          </div>
+          <p style="margin-top:10px">
+            <a class="btn" href="https://github.com/yberrhazi/Finance-projects/tree/main/MonteCarlo_PI" target="_blank" rel="noreferrer">View Project</a>
+            <a class="btn secondary" href="https://github.com/yberrhazi/Finance-projects/blob/main/MonteCarlo_PI/montecarlo.ipynb" target="_blank" rel="noreferrer">Notebook</a>
+          </p>
+        </div></article>
+      </div>
 
       <!-- Folder: Automation -->
       <h3 style="margin-top:10px">📁 Automation</h3>
@@ -201,7 +202,6 @@
           <p>DC motor modeling, identification then <strong>real-time PID</strong> (speed setpoint) with LabVIEW supervision.</p>
           <div class="meta"><span class="chip">LabVIEW</span><span class="chip">CompactRIO</span><span class="chip">Control</span></div>
         </div></article>
-        
       </div>
 
       <!-- Folder: Analog Electronics -->
@@ -222,15 +222,33 @@
       <!-- Folder: Digital (FPGA, VHDL) -->
       <h3 style="margin-top:22px">📁 Digital (FPGA, VHDL)</h3>
       <div class="grid">
+        <!-- 1) MP3 / Audio Player FIRST -->
         <article class="project card"><div class="project">
-          <h3>Random Number Generator — VHDL (LFSR)</h3>
-          <p>Configurable LFSR (8/16-bit width) with maximal feedback polynomial, <strong>seed</strong> and <strong>enable</strong>, <em>valid</em>/<em>ready</em> flags, and <strong>testbench</strong> (period 2^n−1, distribution). Integrable as IP for pseudo-random draws.</p>
-          <div class="meta"><span class="chip">VHDL</span><span class="chip">FPGA</span><span class="chip">LFSR</span><span class="chip">Testbench</span></div>
+          <h3>FPGA Audio Player — Nexys-4 (PWM DAC)</h3>
+          <p>Real-time audio playback at <strong>44.1 kHz</strong> using a PWM-based DAC and the board’s analog low-pass filter.
+             ROM/RAM audio buffer, <strong>UART loader</strong>, clock enables from 100 MHz, and UI with buttons & 7-segment displays.
+             Extras: <em>volume control</em>, <em>echo</em>, <em>LFSR noise</em>, <em>moving-average filters</em>.</p>
+          <div class="meta">
+            <span class="chip">VHDL</span><span class="chip">FPGA (Artix-7)</span>
+            <span class="chip">PWM</span><span class="chip">UART</span><span class="chip">DSP</span>
+          </div>
+          <p style="margin-top:10px">
+            
+          </p>
         </div></article>
+
+        <!-- 2) Blackjack SECOND -->
         <article class="project card"><div class="project">
           <h3>Blackjack Game on FPGA</h3>
-          <p>Blackjack game implementation on FPGA board, with VGA display, clock management, finite state machines, RAM module and UART module.</p>
+          <p>Blackjack implementation with VGA display, clock management, finite state machines, RAM and UART modules.</p>
           <div class="meta"><span class="chip">VHDL</span><span class="chip">FPGA</span><span class="chip">VGA</span><span class="chip">FSM</span></div>
+        </div></article>
+
+        <!-- 3) Random Numbers THIRD -->
+        <article class="project card"><div class="project">
+          <h3>Random Number Generator — VHDL (LFSR)</h3>
+          <p>Configurable LFSR (8/16-bit) with maximal feedback polynomial, <strong>seed</strong>/<strong>enable</strong>, <em>valid</em>/<em>ready</em> flags, and <strong>testbench</strong> (period 2^n−1).</p>
+          <div class="meta"><span class="chip">VHDL</span><span class="chip">FPGA</span><span class="chip">LFSR</span><span class="chip">Testbench</span></div>
         </div></article>
       </div>
 
@@ -239,7 +257,7 @@
       <div class="grid">
         <article class="project card"><div class="project">
           <h3>HUFFMAN Compression Project (C language)</h3>
-          <p>Practical work and project around image processing, particularly edge detection, binary coding, Huffman format compression, Mandelbrot image generation.</p>
+          <p>Practical work around image processing: edge detection, binary coding, Huffman compression, Mandelbrot image generation.</p>
           <div class="meta"><span class="chip">C Language</span><span class="chip">Memory Management</span><span class="chip">Binary Coding</span><span class="chip">Algorithms</span></div>
         </div></article>
         <article class="project card"><div class="project">
@@ -248,13 +266,14 @@
           <div class="meta"><span class="chip">MATLAB</span><span class="chip">Signal Processing</span><span class="chip">Filters</span><span class="chip">Fourier</span></div>
         </div></article>
       </div>
-      
+    </section>
+
     <!-- EXPERIENCE -->
     <section class="card section" id="experience">
       <h2>Experience</h2>
       <div class="timeline">
         <div class="tl">
-          <h3>Robotics Intern — ENSEIRB‑MATMECA</h3>
+          <h3>Robotics Intern — ENSEIRB-MATMECA</h3>
           <small>June 2025 · Bordeaux</small>
           <ul>
             <li>Python development for cobot control (UR5, xArm6) and sensor-actuator communication.</li>
@@ -272,7 +291,7 @@
           <small>2025 —</small>
           <ul>
             <li>Communication Manager — NLOG'EIRB (competitive programming).</li>
-            <li>Co‑logistics Manager — INGÉNIB Forum (80+ companies, 1500 students).</li>
+            <li>Co-logistics Manager — INGÉNIB Forum (80+ companies, 1500 students).</li>
           </ul>
         </div>
       </div>
@@ -287,11 +306,11 @@
           <p class="lead">Bachelor's Year 3 Mathematics (2025–2026, distance learning). Modules: Probability, Complex Analysis, Differential Equations, Topology, Differential Calculus.</p>
         </div>
         <div>
-          <h3>ENSEIRB‑MATMECA (Bordeaux INP)</h3>
+          <h3>ENSEIRB-MATMECA (Bordeaux INP)</h3>
           <p class="lead">Engineering Degree — <strong>Electronics</strong> specialization (2024–2027). Embedded systems, automation, VHDL, C, Python, signal processing, analog/digital design.</p>
         </div>
         <div>
-          <h3>CPGE PCSI‑PSI</h3>
+          <h3>CPGE PCSI-PSI</h3>
           <p class="lead">2022–2024 — Ranked 11th/961 in the national competitive exam. Scientific rigor and analytical mindset.</p>
         </div>
       </div>
@@ -309,29 +328,21 @@
     </section>
 
     <footer class="container" style="text-align:center">
-      <p>© <span id="year"></span> Yassine Berrhazi · </p>
+      <p>© <span id="year"></span> Yassine Berrhazi</p>
     </footer>
   </main>
 
   <script>
-    // Theme (dark/light) with localStorage and quick keyboard shortcut (G)
+    // Theme (dark/light) toggle with localStorage
     const root=document.documentElement;
     const btn=document.getElementById('themeBtn');
     function setTheme(mode){ if(mode==='light'){root.classList.add('light');} else {root.classList.remove('light');} localStorage.setItem('theme',mode);} 
     const saved=localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');
     setTheme(saved);
     btn.addEventListener('click',()=> setTheme(root.classList.contains('light') ? 'dark':'light'));
-    addEventListener('keydown',e=>{ if(e.key.toLowerCase()==='g') btn.click(); });
-
-    // Copy link to clipboard
-    document.getElementById('copyLink').addEventListener('click',async e=>{
-      e.preventDefault();
-      try{ await navigator.clipboard.writeText(location.href); e.target.textContent='✅ Link copied'; setTimeout(()=>e.target.textContent='🔗 Copy link',1800);}catch(err){ alert('Copy failed'); }
-    });
 
     // Year
     document.getElementById('year').textContent=new Date().getFullYear();
   </script>
 </body>
 </html>
-```
