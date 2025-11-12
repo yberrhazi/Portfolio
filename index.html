@@ -219,69 +219,17 @@
         </div></article>
       </div>
 
-      <!-- Folder: Digital (FPGA, VHDL) -->
-      <h3 style="margin-top:22px">📁 Digital (FPGA, VHDL)</h3>
-      <div class="grid">
-        <!-- 1) MP3 / Audio Player FIRST -->
-        <article class="project card"><div class="project">
-          <h3>FPGA Audio Player — Nexys-4 (PWM DAC)</h3>
-          <p>Real-time audio playback at <strong>44.1 kHz</strong> using a PWM-based DAC and the board’s analog low-pass filter.
-             ROM/RAM audio buffer, <strong>UART loader</strong>, clock enables from 100 MHz, and UI with buttons & 7-segment displays.
-             Extras: <em>volume control</em>, <em>echo</em>, <em>LFSR noise</em>, <em>moving-average filters</em>.</p>
-          <div class="meta">
-            <span class="chip">VHDL</span><span class="chip">FPGA (Artix-7)</span>
-            <span class="chip">PWM</span><span class="chip">UART</span><span class="chip">DSP</span>
-          </div>
-          <p style="margin-top:10px">
-            
-          </p>
-        </div></article>
 
-        <!-- 2) Blackjack SECOND -->
-        <article class="project card"><div class="project">
-          <h3>Blackjack Game on FPGA</h3>
-          <p>Blackjack implementation with VGA display, clock management, finite state machines, RAM and UART modules.</p>
-          <div class="meta"><span class="chip">VHDL</span><span class="chip">FPGA</span><span class="chip">VGA</span><span class="chip">FSM</span></div>
-        </div></article>
-
-        <!-- 3) Random Numbers THIRD -->
-        <article class="project card"><div class="project">
-          <h3>Random Number Generator — VHDL (LFSR)</h3>
-          <p>Configurable LFSR (8/16-bit) with maximal feedback polynomial, <strong>seed</strong>/<strong>enable</strong>, <em>valid</em>/<em>ready</em> flags, and <strong>testbench</strong> (period 2^n−1).</p>
-          <div class="meta"><span class="chip">VHDL</span><span class="chip">FPGA</span><span class="chip">LFSR</span><span class="chip">Testbench</span></div>
-        </div></article>
-      </div>
-
-      <!-- NEW Folder: C Projects / Games -->
-      <h3 style="margin-top:22px">📁 C Projects / Games</h3>
+      <!-- Folder: Microcontrollers & Low-level -->
+      <h3 style="margin-top:22px">📁 Microcontrollers & Low‑level</h3>
       <div class="grid">
         <article class="project card"><div class="project">
-          <h3>Battleship (C)</h3>
-          <p>Modular console game with <strong>struct</strong>-based <em>player</em> and <em>boat</em> types, placement validation, hit/miss logic, turn system, and win detection.</p>
-          <div class="meta"><span class="chip">C</span><span class="chip">Data structures</span><span class="chip">Game logic</span></div>
-        </div></article>
-        <article class="project card"><div class="project">
-          <h3>Connect Four (C)</h3>
-          <p>Grid representation, turn-based mechanics, input validation, and win detection on rows/columns/diagonals; simple terminal UI.</p>
-          <div class="meta"><span class="chip">C</span><span class="chip">Algorithms</span><span class="chip">CLI</span></div>
+          <h3>Quartz Clock on PICDEM2+ — LCD 2×16</h3>
+          <p>Real‑time clock on <strong>PIC16F877A</strong> using the 32.768 kHz crystal: <strong>Timer1</strong> overflow + <strong>CCP1 compare</strong> for 1 s ticks, LCD 4‑bit driver, debounced buttons (S2/S3) and optional analog setting via potentiometer (RA0); heartbeat LED on RB1.</p>
+          <div class="meta"><span class="chip">C</span><span class="chip">PIC16F877A</span><span class="chip">Interrupts</span><span class="chip">Timer1/CCP</span><span class="chip">LCD 2×16</span><span class="chip">ADC</span></div>
+          <p style="margin-top:10px"></p>
         </div></article>
       </div>
-
-      <!-- Folder: Signal and Image Processing -->
-      <h3 style="margin-top:22px">📁 Signal and Image Processing</h3>
-      <div class="grid">
-        <article class="project card"><div class="project">
-          <h3>HUFFMAN Compression Project (C language)</h3>
-          <p>Practical work around image processing: edge detection, binary coding, Huffman compression, Mandelbrot image generation.</p>
-          <div class="meta"><span class="chip">C Language</span><span class="chip">Memory Management</span><span class="chip">Binary Coding</span><span class="chip">Algorithms</span></div>
-        </div></article>
-        <article class="project card"><div class="project">
-          <h3>Signal Processing (Matlab)</h3>
-          <p>FIR/IIR filters, spectral analysis, Fourier transforms, audio signal filtering and processing, spectrogram analysis.</p>
-          <div class="meta"><span class="chip">MATLAB</span><span class="chip">Signal Processing</span><span class="chip">Filters</span><span class="chip">Fourier</span></div>
-        </div></article>
-      </div>
-    </section>
 
     <!-- EXPERIENCE -->
     <section class="card section" id="experience">
@@ -325,7 +273,7 @@
           <p class="lead">Engineering Degree — <strong>Electronics</strong> specialization (2024–2027). Embedded systems, automation, VHDL, C, Python, signal processing, analog/digital design.</p>
         </div>
         <div>
-          <h3>French Preparatory Classes to Grandes Ecoles (Physics, maths and engineering sciences track)</h3>
+          <h3>CPGE PCSI-PSI</h3>
           <p class="lead">2022–2024 — Ranked 11th/961 in the national competitive exam. Scientific rigor and analytical mindset.</p>
         </div>
       </div>
